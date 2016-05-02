@@ -1,0 +1,18 @@
+{
+  "name": "node-git",
+  "version": "1.0.0",
+  "description": "Execute git terminal using Node.js",
+  "main": "src/runner.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "run": "node ./src/runner.js"
+  },
+  "keywords": [
+    "Git"
+  ],
+  "author": "ShuaiLiang",
+  "license": "ISC",
+  "dependencies": {
+    "q": "1.4.1"
+  }
+}

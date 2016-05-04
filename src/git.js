@@ -9,10 +9,9 @@ var Git = function(baseDir) {
 Git.prototype = command;
 Git.prototype.constructor = Git;
 
-// Test
-// var git = new Git('../');
-// git.status().then(function(result) {
-// 	console.log(result);
-// });
 
+var git = new Git('../');
+git.status().then(function(result) {
+	console.log(result);
+});
 module.exports = Git;

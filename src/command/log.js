@@ -1,5 +1,6 @@
-var text = "mom and dad and baby";
-var pattern = /mom( and dad( and baby)?)?/gi;
+'use strict';
+var runner = require('../runner');
 
-var matches = pattern.exec(text);
-console.log(matches);
+module.exports = function() {
+	return runner.execute(['git', 'log', 'master']);
+}

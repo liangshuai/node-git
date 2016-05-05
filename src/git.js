@@ -10,8 +10,8 @@ Git.prototype = command;
 Git.prototype.constructor = Git;
 
 
-var git = new Git('../../hkjc-cssp');
-git.log().then(function(result) {
+var git = new Git('../');
+git.status().then(function(result) {
 	console.log(result);
 });
 module.exports = Git;

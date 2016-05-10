@@ -11,7 +11,7 @@ Git.prototype.constructor = Git;
 
 
 var git = new Git('../');
-git.status().then(function(result) {
+git.files().then(function(result) {
 	console.log(result);
 });
 module.exports = Git;

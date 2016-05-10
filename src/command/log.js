@@ -7,9 +7,10 @@ var Log = function(symbol) {
 		BODY_START_LINE_INDEX = 8,
 		attrIndex = 0,
 		bodyParser = function(lines) {
-			var bodyLines = lines.slice(BODY_START_LINE_INDEX - 1),
-				bodyFullText = bodyLines.join('\n'),
-				bodyValidText = bodyFullText.substring(1, bodyFullText.length);
+			var bodyLines = lines.slice(BODY_START_LINE_INDEX),
+				bodyFullText = bodyLines.join('\n').replace(/\n+$/g, ''),
+				bodyValidText = bodyFullText.substring(1, bodyFullText.length - 1);
+
 			return bodyValidText;
 		};
 
@@ -28,8 +29,9 @@ var Log = function(symbol) {
 
 
 function parse(result) {
-	var allLogsMsg = result.split('\n\n'),
-		logs = [], logMsg;
+	var allLogsMsg = result.split('\n\n\n'),
+		logs = [],
+		logMsg;
 
 	allLogsMsg.map(function(logMsg) {
 		logs.push(Log(logMsg));
@@ -54,12 +56,12 @@ module.exports = function() {
 		// committer date, relative
 		'%cr',
 		// commit subject
-		'%s', 
+		'%s',
 		// commit body
 		':%b:',
 		// last end line
 		'%n'
 	];
 
-	return runner.execute(['git', 'log', needOutputFormat.join('%n'), '']);
+	return runner.execute(['git', 'log', '--pretty=format:' + needOutputFormat.join('%n') + ''], parse);
 };

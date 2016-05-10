@@ -1,6 +1,21 @@
 'use strict';
 var runner = require('../runner');
 
+/**
+
+result format
+
+{
+	"files": [".gitignore", "package.json"],
+	"src": {
+		"command": {
+			"files": ["diff.js", "index.js", "init.js", "log.js", "status.js"]
+		},
+		"files": ["git.js", "index.js", "runner.js"]
+	}
+}
+
+*/
 var parse = function(output) {
 	var pathArr = output.trim().split('\n');
 	var forEach = [].forEach;

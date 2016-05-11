@@ -25,7 +25,6 @@ var parse = function(output) {
 		var itemArr = item.trim().split('/');
 		var len = itemArr.length;
 		itemArr.reduce(function(prev, curr, index) {
-			console.log(len, index);
 			if(index === len - 1) {
 				prev['files'] || (prev['files'] = []);
 				prev['files'].push(curr);
@@ -34,11 +33,10 @@ var parse = function(output) {
 			if(!prev[curr]){
 				prev[curr] = {};
 			}
-			
 			return prev[curr];
 		}, result);
 	});
-	console.log(JSON.stringify(result));
+	return result;
 	
 }
 

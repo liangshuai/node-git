@@ -10,7 +10,7 @@ Git.prototype = command;
 Git.prototype.constructor = Git;
 
 var git = new Git('../');
-git.files().then(function(result) {
+git.diff().then(function(result) {
 	console.log(result);
 });
 module.exports = Git;

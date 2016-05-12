@@ -13,6 +13,7 @@
   "author": "ShuaiLiang",
   "license": "ISC",
   "dependencies": {
+    "diff2html": "^1.3.2",
     "q": "1.4.1"
   }
 }

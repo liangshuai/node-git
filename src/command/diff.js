@@ -1,30 +1,31 @@
 'use strict';
 var runner = require('../runner');
+var diff2Html = require('diff2html').Diff2Html;
 
-var parse = function(diff) {
+// var parse = function(diff) {
 
-	var filename;
-	var isEmpty = true;
-	var files = {};
+	// var filename;
+	// var isEmpty = true;
+	// var files = {};
 
-	diff.split( "\n" ).forEach(function( line, i ) {
-		if ( !line || line.charAt( 0 ) === "*" ) {
-			return;
-		}
+	// diff.split( "\n" ).forEach(function( line, i ) {
+	// 	if ( !line || line.charAt( 0 ) === "*" ) {
+	// 		return;
+	// 	}
 
-		if ( line.charAt( 0 ) === "d" ) {
-			isEmpty = false;
-			filename = line.replace( /^diff --(?:cc |git a\/)(\S+).*$/, "$1" );
-			files[ filename ] = [];
-		}
+	// 	if ( line.charAt( 0 ) === "d" ) {
+	// 		isEmpty = false;
+	// 		filename = line.replace( /^diff --(?:cc |git a\/)(\S+).*$/, "$1" );
+	// 		files[ filename ] = [];
+	// 	}
 
-		files[ filename ].push( line );
-	});
+	// 	files[ filename ].push( line );
+	// });
 
-	return isEmpty ? null : files;
-}
+	// return isEmpty ? null : files;
+// }
 
 
 module.exports = function() {
-	return runner.execute(['git', 'diff', '885edf7dc8', '46da05f696e'], parse);
+	return runner.execute(['git', 'diff', '885edf7dc8', '46da05f696e'], diff2Html.getJsonFromDiff);
 }

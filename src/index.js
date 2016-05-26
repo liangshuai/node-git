@@ -8,5 +8,9 @@ var Git = function(baseDir) {
 
 Git.prototype = command;
 Git.prototype.constructor = Git;
+Git.prototype.setBaseDir = function(baseDir) {
+	runner.baseDir = baseDir;
+	return this;
+}
 
 module.exports = Git;

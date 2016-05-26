@@ -3,7 +3,7 @@
 ## How to use it
 
 ```js
-var Git = require('???');
+var Git = require('git-command');
 var git = new Git(YOUR_REPO_PATH);
 
 // For example, git log
@@ -19,8 +19,9 @@ DONE
 * git status
 * git log
 * git ls-files
+* git diff
 
 TODO
 
-* git diff
 * git checkout
+

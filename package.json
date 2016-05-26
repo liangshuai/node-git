@@ -1,11 +1,15 @@
 {
-  "name": "node-git",
-  "version": "1.0.0",
+  "name": "git-command",
+  "version": "1.0.1",
   "description": "Execute git terminal using Node.js",
   "main": "src/runner.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "run": "node ./src/runner.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/liangshuai/node-git.git"
   },
   "keywords": [
     "Git"

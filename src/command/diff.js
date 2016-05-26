@@ -26,6 +26,6 @@ var diff2Html = require('diff2html').Diff2Html;
 // }
 
 
-module.exports = function() {
-	return runner.execute(['git', 'diff', '885edf7dc8', '46da05f696e'], diff2Html.getJsonFromDiff);
+module.exports = function(commitA, commitB) {
+	return runner.execute(['git', 'diff', commitA, commitB], diff2Html.getJsonFromDiff);
 }

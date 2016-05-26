@@ -1,16 +1,12 @@
-/**
-* Execute Git command by Node.js
-*/
-
 'use strict';
 
-var Git = require('./git');
-var git = new Git();
+var runner = require('./runner');
+var command = require('./command');
+var Git = function(baseDir) {
+	runner.baseDir = baseDir;
+};
 
-git.status().then(function(result) {
-	console.log(result);
-});
+Git.prototype = command;
+Git.prototype.constructor = Git;
 
-git.log().then(function(result) {
-	console.log(result);
-});
+module.exports = Git;

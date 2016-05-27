@@ -2,7 +2,7 @@
   "name": "git-command",
   "version": "1.0.3",
   "description": "Execute git command using Node.js",
-  "main": "src/runner.js",
+  "main": "src/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "run": "node ./src/runner.js"

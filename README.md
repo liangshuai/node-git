@@ -20,6 +20,7 @@ DONE
 * git log
 * git ls-files
 * git diff
+* git clone
 
 TODO
 

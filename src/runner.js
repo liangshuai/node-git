@@ -1,6 +1,7 @@
 'use strict';
 
 var childproc = require('child_process'),
+ 	abs = require('abs'),
 	exec = childproc.exec,
 	execSync = childproc.execSync,
 	spawn = childproc.spawn,
@@ -21,7 +22,7 @@ Runner.prototype.execute = function(command, parse, options) {
 	var defer = Q.defer();
 	var result = "";
 	var executor = spawn(task, command, {
-		cwd: this.baseDir
+		cwd: abs(this.baseDir)
 	});
 	parse = parse || noop;
 	executor.stdout.on('data', function (data) {

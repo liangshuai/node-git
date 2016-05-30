@@ -17,6 +17,7 @@
   "author": "ShuaiLiang",
   "license": "ISC",
   "dependencies": {
+    "abs": "^1.3.4",
     "diff2html": "^1.3.2",
     "q": "1.4.1"
   }

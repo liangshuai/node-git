@@ -1,7 +1,7 @@
 'use strict';
 var runner = require('../runner');
 var diff2Html = require('diff2html').Diff2Html;
-
+var summaryParser = require('../util/status-parser');
 // var parse = function(diff) {
 
 	// var filename;
@@ -26,6 +26,10 @@ var diff2Html = require('diff2html').Diff2Html;
 // }
 
 
-module.exports = function(commitA, commitB) {
-	return runner.execute(['git', 'diff', commitA, commitB], diff2Html.getJsonFromDiff);
+module.exports = function(commitA, commitB, mode) {
+	var parser = mode === 'summary' ? summaryParser : diff2Html.getJsonFromDiff;
+	var command = ['git', 'diff', commitA, commitB];
+	mode === 'summary' && command.push('--name-status');
+
+	return runner.execute(command, parser);
 }

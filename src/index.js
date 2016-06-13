@@ -13,4 +13,9 @@ Git.prototype.setBaseDir = function(baseDir) {
 	return this;
 }
 
+var git = new Git("../");
+git.diff('8c5a152e9864c', '3484202d6acf4', 's').then(response => {
+	console.log(response)
+});
+
 module.exports = Git;

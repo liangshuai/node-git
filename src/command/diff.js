@@ -27,9 +27,9 @@ var summaryParser = require('../util/status-parser');
 
 
 module.exports = function(commitA, commitB, mode) {
-	var parser = mode === 'summary' ? summaryParser : diff2Html.getJsonFromDiff;
+	var parser = mode === 's' ? summaryParser : diff2Html.getJsonFromDiff;
 	var command = ['git', 'diff', commitA, commitB];
-	mode === 'summary' && command.push('--name-status');
+	mode === 's' && command.push('--name-status');
 
 	return runner.execute(command, parser);
 }

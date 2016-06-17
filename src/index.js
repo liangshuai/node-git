@@ -13,15 +13,4 @@ Git.prototype.setBaseDir = function(baseDir) {
 	return this;
 }
 
-var git = new Git();
-
-git.log().then(list => {
-	console.log(list);
-});
-
-
-git.checkout('8db731d58b7880147bb8f7559cdfe0218535dfdb').then(result =>{
-	console.log('checkout complete');
-});
-
 module.exports = Git;

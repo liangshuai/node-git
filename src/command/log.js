@@ -65,7 +65,7 @@ module.exports = function(logSource) {
 
 	logSource = typeof logSource === 'string' ? logSource : '';
 
-	return runner.execute(['git', 'log', 'logSource', 
+	return runner.execute(['git', 'log', logSource, 
 		'--pretty=format:' + needOutputFormat.join('%n') + ''], 
 		parse);
 };

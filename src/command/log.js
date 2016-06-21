@@ -39,7 +39,7 @@ function parse(result) {
 	return logs;
 }
 
-module.exports = function() {
+module.exports = function(logSource) {
 	var needOutputFormat = [
 		// commit hash
 		'%H',
@@ -63,5 +63,9 @@ module.exports = function() {
 		'%n'
 	];
 
-	return runner.execute(['git', 'log', '--pretty=format:' + needOutputFormat.join('%n') + ''], parse);
+	logSource = typeof logSource === 'string' ? logSource : '';
+
+	return runner.execute(['git', 'log', 'logSource', 
+		'--pretty=format:' + needOutputFormat.join('%n') + ''], 
+		parse);
 };

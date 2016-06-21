@@ -21,8 +21,9 @@ DONE
 * git ls-files
 * git diff
 * git clone
+* git checkout
 
 TODO
+* git show
 
-* git checkout
 

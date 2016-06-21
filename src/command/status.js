@@ -1,6 +1,6 @@
 'use strict';
 var runner = require('../runner');
-var parser = require('../util/status-parser');
+var parser = require('../parse/status-parser');
 
 
 module.exports = function() {

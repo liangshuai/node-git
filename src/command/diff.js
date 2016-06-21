@@ -1,7 +1,7 @@
 'use strict';
 var runner = require('../runner');
 var diff2Html = require('diff2html').Diff2Html;
-var summaryParser = require('../util/status-parser');
+var summaryParser = require('../parse/status-parser');
 // var parse = function(diff) {
 
 	// var filename;
